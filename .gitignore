@@ -1,0 +1,34 @@
+# Python virtual environment
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# MLflow
+mlflow.db
+mlruns/
+
+# Generated artifacts
+artifacts/
+models/*.pkl
+models/*.joblib
+
+# Environment/secrets
+.env
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# Large dataset
+News_Category_Dataset_v3.json
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,22 @@
+{
+    "pipeline_stages": [
+        "TextCleanerTransformer",
+        "TfidfVectorizer"
+    ],
+    "max_features": 25000,
+    "ngram_range": [
+        1,
+        2
+    ],
+    "sublinear_tf": true,
+    "stop_words": "english",
+    "train_matrix_shape": [
+        20000,
+        25000
+    ],
+    "test_matrix_shape": [
+        5000,
+        25000
+    ],
+    "vocabulary_size": 25000
+}
