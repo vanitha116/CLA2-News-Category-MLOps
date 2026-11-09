@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: news-category-api
+  labels:
+    app: news-category-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: news-category-api
+  template:
+    metadata:
+      labels:
+        app: news-category-api
+    spec:
+      containers:
+        - name: news-category-api
+          image: news-category-api:1.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 10
+            periodSeconds: 15

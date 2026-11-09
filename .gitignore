@@ -11,10 +11,21 @@ __pycache__/
 mlflow.db
 mlruns/
 
+# Local datasets and generated preprocessing splits
+/data/raw/
+/data/processed/X_*_raw.csv
+/data/processed/dataset_metadata.json
+
 # Generated artifacts
 artifacts/
 models/*.pkl
 models/*.joblib
+deployment/*.pkl
+deployment/model_metadata.json
+/logs/
+/outputs/
+/reports/
+.pytest_cache/
 
 # Environment/secrets
 .env
